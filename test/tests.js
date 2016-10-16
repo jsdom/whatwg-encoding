@@ -108,6 +108,12 @@ describe("labelToName", () => {
 
     assert.strictEqual(whatwgEncoding.labelToName("x-user-defined"), null);
   });
+
+  it("should return null for non-strings", () => {
+    assert.strictEqual(whatwgEncoding.labelToName(), null);
+    assert.strictEqual(whatwgEncoding.labelToName(5), null);
+    assert.strictEqual(whatwgEncoding.labelToName({}), null);
+  });
 });
 
 describe("isSupported", () => {
