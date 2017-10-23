@@ -16,7 +16,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint lib test",
-    "update": "node scripts/update.js"
+    "prepare": "node scripts/update.js"
   },
   "dependencies": {
     "iconv-lite": "0.4.13"
