@@ -19,7 +19,7 @@
     "prepare": "node scripts/update.js"
   },
   "dependencies": {
-    "iconv-lite": "0.4.19"
+    "iconv-lite": "0.4.23"
   },
   "devDependencies": {
     "eslint": "^3.8.0",
