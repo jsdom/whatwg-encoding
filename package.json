@@ -5,7 +5,7 @@
     "encoding",
     "whatwg"
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "MIT",
   "repository": "jsdom/whatwg-encoding",
