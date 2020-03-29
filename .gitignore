@@ -8,5 +8,6 @@
 /lib/TextDecoder.js
 /lib/TextDecodeOptions.js
 /lib/TextDecoderOptions.js
+/lib/TextEncoderEncodeIntoResult.js
 /lib/utils.js
 /live-viewer/whatwg-encoding.js

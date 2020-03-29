@@ -1,9 +1,10 @@
 coverage/
 test/web-platform-tests/
 lib/TextEncoder.js
+lib/TextDecoder.js
 lib/TextDecodeOptions.js
 lib/TextDecoderOptions.js
-lib/TextDecoder.js
+lib/TextEncoderEncodeIntoResult.js
 lib/whatwg-encoding.js
 lib/utils.js
 live-viewer/whatwg-encoding.js

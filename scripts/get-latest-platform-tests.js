@@ -31,7 +31,7 @@ const targetDir = path.resolve(__dirname, "..", "test", "web-platform-tests");
 for (const file of [
   "api-basics.any.js",
   "api-surrogates-utf8.any.js",
-  "textdecoder-ignorebom.any.js",
+  // "textdecoder-ignorebom.any.js",
   "textencoder-utf16-surrogates.any.js"
 ]) {
   pipeline(

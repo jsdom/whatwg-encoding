@@ -1,12 +1,11 @@
-// https://www.w3.org/TR/encoding/#interface-textdecoder
+// https://encoding.spec.whatwg.org/#textdecoder
 [Exposed=(Window,Worker)]
 interface TextDecoder {
-  constructor(optional DOMString label = "utf-8", optional TextDecoderOptions options);
-  readonly attribute DOMString encoding;
-  readonly attribute boolean fatal;
-  readonly attribute boolean ignoreBOM;
-  USVString decode(optional BufferSource input, optional TextDecodeOptions options);
+  constructor(optional DOMString label = "utf-8", optional TextDecoderOptions options = {});
+  USVString decode(optional [AllowShared] BufferSource input, optional TextDecodeOptions options = {});
 };
+
+TextDecoder includes TextDecoderCommon;
 
 dictionary TextDecoderOptions {
   boolean fatal = false;
