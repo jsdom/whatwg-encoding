@@ -20,7 +20,7 @@ process.on("unhandledRejection", err => {
 // Pin to specific version, reflecting the spec version in the readme.
 //
 // To get the latest commit:
-// 1. Go to https://github.com/w3c/web-platform-tests/tree/master/url
+// 1. Go to https://github.com/w3c/web-platform-tests/tree/master/encoding
 // 2. Press "y" on your keyboard to get a permalink
 // 3. Copy the commit hash
 const commitHash = "4e83bff9e071561dd10538dda073cd2f43b68e4a";
