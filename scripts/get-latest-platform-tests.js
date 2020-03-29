@@ -29,21 +29,10 @@ const urlPrefix = `https://raw.githubusercontent.com/web-platform-tests/wpt/${co
 const targetDir = path.resolve(__dirname, "..", "test", "web-platform-tests");
 
 for (const file of [
-  "resources/setters_tests.json",
-  "resources/toascii.json",
-  "resources/urltestdata.json",
-  "url-tojson.any.js",
-  "urlencoded-parser.any.js",
-  "urlsearchparams-append.any.js",
-  "urlsearchparams-constructor.any.js",
-  "urlsearchparams-delete.any.js",
-  "urlsearchparams-foreach.any.js",
-  "urlsearchparams-getall.any.js",
-  "urlsearchparams-get.any.js",
-  "urlsearchparams-has.any.js",
-  "urlsearchparams-set.any.js",
-  "urlsearchparams-sort.any.js",
-  "urlsearchparams-stringifier.any.js"
+  "api-basics.any.js",
+  "api-surrogates-utf8.any.js",
+  "textdecoder-ignorebom.any.js",
+  "textencoder-utf16-surrogates.any.js"
 ]) {
   pipeline(
     got.stream(`${urlPrefix}${file}`),

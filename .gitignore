@@ -3,11 +3,12 @@ node_modules/
 npm-debug.log
 
 # project specific
+coverage/
 test/web-platform-tests/
 lib/*.json
 lib/TextEncorder.js
-lib/TextEncorderOptions.js
 lib/TextDecorder.js
+lib/TextDecodeOptions.js
 lib/TextDecorderOptions.js
 lib/utils.js
 live-viewer/whatwg-encoding.js
