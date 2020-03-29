@@ -19,50 +19,19 @@
       <span class="fail">red</span>.
 
       <form>
-        <label for="url">Encoding:</label>
-        <input id="url" value="https://example.com/" autofocus>
-
-        <label for="base">Base Encoding:</label>
-        <input id="base" value="about:blank">
+        <label for="message">Message:</label>
+        <input id="message" value="Hello, World" autofocus>
       </form>
 
       <h2>Browser's Encoding components</h2>
 
       <table class="output" id="browser-output">
-        <tr id="href">
-          <th>href</th>
+        <tr id="encoded">
+          <th>encoded</th>
           <td></td>
         </tr>
-        <tr id="protocol">
-          <th>protocol</th>
-          <td></td>
-        </tr>
-        <tr id="username">
-          <th>username</th>
-          <td></td>
-        </tr>
-        <tr id="password">
-          <th>password</th>
-          <td></td>
-        </tr>
-        <tr id="port">
-          <th>port</th>
-          <td></td>
-        </tr>
-        <tr id="hostname">
-          <th>hostname</th>
-          <td></td>
-        </tr>
-        <tr id="pathname">
-          <th>pathname</th>
-          <td></td>
-        </tr>
-        <tr id="search">
-          <th>search</th>
-          <td></td>
-        </tr>
-        <tr id="hash">
-          <th>hash</th>
+        <tr id="decoded">
+          <th>decoded</th>
           <td></td>
         </tr>
       </table>
@@ -72,40 +41,12 @@
       <h2>jsdom/whatwg-encoding's components</h2>
 
       <table class="output" id="jsdom-output">
-        <tr id="href">
-          <th>href</th>
+        <tr id="encoded">
+          <th>encoded</th>
           <td></td>
         </tr>
-        <tr id="protocol">
-          <th>protocol</th>
-          <td></td>
-        </tr>
-        <tr id="username">
-          <th>username</th>
-          <td></td>
-        </tr>
-        <tr id="password">
-          <th>password</th>
-          <td></td>
-        </tr>
-        <tr id="port">
-          <th>port</th>
-          <td></td>
-        </tr>
-        <tr id="hostname">
-          <th>hostname</th>
-          <td></td>
-        </tr>
-        <tr id="pathname">
-          <th>pathname</th>
-          <td></td>
-        </tr>
-        <tr id="search">
-          <th>search</th>
-          <td></td>
-        </tr>
-        <tr id="hash">
-          <th>hash</th>
+        <tr id="decoded">
+          <th>decoded</th>
           <td></td>
         </tr>
       </table>
@@ -115,7 +56,5 @@
       <footer>
         <a href="https://github.com/jsdom/whatwg-encoding/tree/master/live-viewer">Fork me on GitHub!</a>
       </footer>
-
-      <iframe hidden id="browser-iframe"></iframe>
 
       <script src="live-viewer.js"></script>
