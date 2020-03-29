@@ -11,6 +11,10 @@ module.exports = {
     // No-op; the only place this is used in WPT is not applicable to our usage.
   },
 
+  subsetTest(testFunc, ...args) {
+    return testFunc(...args);
+  },
+
   assert_true(actual) {
     assert.strictEqual(actual, true);
   },
@@ -23,11 +27,19 @@ module.exports = {
     assert.strictEqual(actual, expected);
   },
 
+  assert_not_equals(actual, expected) {
+    assert.notEqual(actual, expected);
+  },
+
   assert_array_equals(actual, expected) {
     assert.deepStrictEqual([...actual], [...expected]);
   },
 
   assert_throws(code, func) {
+    assert.throws(func);
+  },
+
+  assert_throws_js(code, func) {
     assert.throws(func);
   },
 

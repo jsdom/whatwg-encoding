@@ -30,9 +30,23 @@ const targetDir = path.resolve(__dirname, "..", "test", "web-platform-tests");
 
 for (const file of [
   "api-basics.any.js",
+  // "api-invalid-label.any.js",
+  "api-replacement-encodings.any.js",
   "api-surrogates-utf8.any.js",
-  // "textdecoder-ignorebom.any.js",
-  "textencoder-utf16-surrogates.any.js"
+  // "encodeInto.any.js",
+  // "replacement-encodings.any.js",
+  "textdecoder-byte-order-marks.any.js",
+  // "textdecoder-copy.any.js",
+  // "textdecoder-fatal-single-byte.any.js",
+  // "textdecoder-fatal-streaming.any.js",
+  // "textdecoder-fatal.any.js",
+  "textdecoder-ignorebom.any.js",
+  // "textdecoder-labels.any.js",
+  // "textdecoder-streaming.any.js",
+  // "textdecoder-utf16-surrogates.any.js"
+  // "textencoder-constructor-non-utf.any.js",
+  // "textencoder-utf16-surrogates.any.js",
+  // "unsupported-encodings.any.js"
 ]) {
   pipeline(
     got.stream(`${urlPrefix}${file}`),
