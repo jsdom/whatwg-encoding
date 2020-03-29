@@ -1,4 +1,14 @@
-/node_modules/
-/npm-debug.log
+# node specific
+node_modules/
+npm-debug.log
 
-/lib/*.json
+# project specific
+test/web-platform-tests/
+lib/*.json
+lib/TextEncorder.js
+lib/TextEncorderOptions.js
+lib/TextDecorder.js
+lib/TextDecorderOptions.js
+lib/utils.js
+live-viewer/whatwg-encoding.js
+out/
