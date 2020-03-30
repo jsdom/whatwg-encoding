@@ -1,4 +1,13 @@
 /node_modules/
 /npm-debug.log
 
+/coverage/
+/test/web-platform-tests/
 /lib/*.json
+/lib/TextEncoder.js
+/lib/TextDecoder.js
+/lib/TextDecodeOptions.js
+/lib/TextDecoderOptions.js
+/lib/TextEncoderEncodeIntoResult.js
+/lib/utils.js
+/live-viewer/whatwg-encoding.js
