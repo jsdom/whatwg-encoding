@@ -30,22 +30,48 @@ const targetDir = path.resolve(__dirname, "..", "test", "web-platform-tests");
 
 for (const file of [
   "api-basics.any.js",
+
+  // Missing testharness 'setup' function
   // "api-invalid-label.any.js",
+
   "api-replacement-encodings.any.js",
   "api-surrogates-utf8.any.js",
+
+  // Missing testharness 'createBuffer' function
   // "encodeInto.any.js",
+
+  // Missing testharness 'decode_test' function
   // "replacement-encodings.any.js",
+
   "textdecoder-byte-order-marks.any.js",
+
+  // Missing testharness 'createBuffer' function
   // "textdecoder-copy.any.js",
+
+  // Package 'iconv-lite' does not support 'x-mac-cyrillic'
   // "textdecoder-fatal-single-byte.any.js",
+
+  // Stream support not implemented
   // "textdecoder-fatal-streaming.any.js",
+
   // "textdecoder-fatal.any.js",
+
   "textdecoder-ignorebom.any.js",
+
+  // Infinite looping
   // "textdecoder-labels.any.js",
+
+  // Stream support not implemented
   // "textdecoder-streaming.any.js",
+
   // "textdecoder-utf16-surrogates.any.js"
+
+  // Package 'iconv-lite' does not support 'x-mac-cyrillic', 'ISO-8859-8-I', 'ISO-2022-JP', 'x-user-defined'
   // "textencoder-constructor-non-utf.any.js",
-  // "textencoder-utf16-surrogates.any.js",
+
+  "textencoder-utf16-surrogates.any.js",
+
+  // Missing testharness 'decode_test' function
   // "unsupported-encodings.any.js"
 ]) {
   pipeline(
