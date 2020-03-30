@@ -48,28 +48,33 @@ for (const file of [
   // Missing testharness 'createBuffer' function
   // "textdecoder-copy.any.js",
 
-  // Package 'iconv-lite' does not support 'x-mac-cyrillic'
+  // Package 'iconv-lite' does not support fatal throw and encoding 'x-mac-cyrillic'
   // "textdecoder-fatal-single-byte.any.js",
 
   // Stream support not implemented
+  // Package 'iconv-lite' does not support fatal throw
   // "textdecoder-fatal-streaming.any.js",
 
+  // Package 'iconv-lite' does not support fatal throw
   // "textdecoder-fatal.any.js",
 
+  // Package 'iconv-lite'
   "textdecoder-ignorebom.any.js",
 
-  // Infinite looping
+  // Infinite looping does not support many encodings
   // "textdecoder-labels.any.js",
 
   // Stream support not implemented
+  // Missing testharness 'createBuffer' function
   // "textdecoder-streaming.any.js",
 
-  // "textdecoder-utf16-surrogates.any.js"
+  // Issue with package 'iconv-lite' not converting all inputs properly
+  // "textdecoder-utf16-surrogates.any.js",
 
-  // Package 'iconv-lite' does not support 'x-mac-cyrillic', 'ISO-8859-8-I', 'ISO-2022-JP', 'x-user-defined'
+  // Package 'iconv-lite' does not support encoding 'x-mac-cyrillic', 'ISO-8859-8-I', 'ISO-2022-JP', 'x-user-defined'
   // "textencoder-constructor-non-utf.any.js",
 
-  "textencoder-utf16-surrogates.any.js",
+  "textencoder-utf16-surrogates.any.js"
 
   // Missing testharness 'decode_test' function
   // "unsupported-encodings.any.js"

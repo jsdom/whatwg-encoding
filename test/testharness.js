@@ -35,12 +35,12 @@ module.exports = {
     assert.deepStrictEqual([...actual], [...expected]);
   },
 
-  assert_throws(code, func) {
-    assert.throws(func);
+  assert_throws(code, func, message) {
+    assert.throws(func, message);
   },
 
-  assert_throws_js(code, func) {
-    assert.throws(func);
+  assert_throws_js(code, func, message) {
+    assert.throws(func, message);
   },
 
   assert_unreached() {
