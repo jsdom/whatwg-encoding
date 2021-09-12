@@ -12,11 +12,9 @@ async function main() {
   const supportedNames = [];
   for (const entry of body) {
     for (const encoding of entry.encodings) {
-      if (iconvLite.encodingExists(encoding.name)) {
-        supportedNames.push(encoding.name);
-        for (const label of encoding.labels) {
-          labelsToNames[label] = encoding.name;
-        }
+      supportedNames.push(encoding.name);
+      for (const label of encoding.labels) {
+        labelsToNames[label] = encoding.name;
       }
     }
   }
@@ -25,7 +23,7 @@ async function main() {
   fs.writeFileSync(path.resolve(__dirname, "../lib/labels-to-names.json"), labelsToNamesOutput);
 
   const supportedNamesOutput = JSON.stringify(supportedNames, undefined, 2);
-  fs.writeFileSync(path.resolve(__dirname, "../lib/supported-names.json"), supportedNamesOutput);
+  fs.writeFileSync(path.resolve(__dirname, "../lib/names.json"), supportedNamesOutput);
 }
 
 main().catch(e => {
