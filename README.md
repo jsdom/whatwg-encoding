@@ -47,4 +47,4 @@ This package was originally based on the excellent work of [@nicolashenry](https
 
 ## Alternatives
 
-If you are looking for a JavaScript implementation of the Encoding Standard's `TextEncoder` and `TextDecoder` APIs, you'll want [@inexorabletash](https://github.com/inexorabletash)'s [text-encoding](https://github.com/inexorabletash/text-encoding) package.
+If you are looking for a JavaScript implementation of the Encoding Standard's `TextEncoder` and `TextDecoder` APIs, you'll want [@inexorabletash](https://github.com/inexorabletash)'s [text-encoding](https://github.com/inexorabletash/text-encoding) package. Node.js also has them [built-in](https://nodejs.org/dist/latest/docs/api/globals.html#globals_textdecoder).
