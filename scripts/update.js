@@ -3,9 +3,11 @@
 const fs = require("fs");
 const path = require("path");
 const iconvLite = require("iconv-lite");
-const got = require("got");
+const fetch = require("minipass-fetch");
 
-got("https://encoding.spec.whatwg.org/encodings.json", { json: true }).then(({ body }) => {
+async function main() {
+  const res = await fetch("https://encoding.spec.whatwg.org/encodings.json");
+  const body = await res.json();
   const labelsToNames = {};
   const supportedNames = [];
   for (const entry of body) {
@@ -24,8 +26,9 @@ got("https://encoding.spec.whatwg.org/encodings.json", { json: true }).then(({ b
 
   const supportedNamesOutput = JSON.stringify(supportedNames, undefined, 2);
   fs.writeFileSync(path.resolve(__dirname, "../lib/supported-names.json"), supportedNamesOutput);
-})
-.catch(e => {
+}
+
+main().catch(e => {
   console.error(e.stack);
   process.exit(1);
 });
