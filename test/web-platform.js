@@ -13,7 +13,7 @@ function createSandbox() {
     TextEncoder,
     TextDecoder,
     // eslint-disable-next-line camelcase
-    encodings_table: encodingsTable
+    encodings_table: JSON.parse(encodingsTable)
   };
   Object.assign(sandbox, testharness);
   vm.createContext(sandbox);

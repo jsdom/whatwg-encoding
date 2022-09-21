@@ -5,10 +5,11 @@ const path = require("path");
 const iconvLite = require("iconv-lite");
 const got = require("got");
 
-got("https://encoding.spec.whatwg.org/encodings.json", { json: true }).then(({ body }) => {
+got("https://encoding.spec.whatwg.org/encodings.json").then(({ body }) => {
   const labelsToNames = {};
   const supportedNames = [];
-  for (const entry of body) {
+  const parsedBody = JSON.parse(body);
+  for (const entry of parsedBody) {
     for (const encoding of entry.encodings) {
       if (iconvLite.encodingExists(encoding.name)) {
         supportedNames.push(encoding.name);

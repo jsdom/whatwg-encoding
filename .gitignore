@@ -4,10 +4,12 @@
 /coverage/
 /test/web-platform-tests/
 /lib/*.json
+/lib/Function.js
 /lib/TextEncoder.js
 /lib/TextDecoder.js
 /lib/TextDecodeOptions.js
 /lib/TextDecoderOptions.js
 /lib/TextEncoderEncodeIntoResult.js
+/lib/VoidFunction.js
 /lib/utils.js
 /live-viewer/whatwg-encoding.js
