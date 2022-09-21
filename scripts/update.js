@@ -3,14 +3,13 @@
 const fs = require("fs");
 const path = require("path");
 const iconvLite = require("iconv-lite");
-const fetch = require("minipass-fetch");
+const got = require("got");
 
-async function main() {
-  const res = await fetch("https://encoding.spec.whatwg.org/encodings.json");
-  const body = await res.json();
+got("https://encoding.spec.whatwg.org/encodings.json").then(({ body }) => {
   const labelsToNames = {};
   const supportedNames = [];
-  for (const entry of body) {
+  const parsedBody = JSON.parse(body);
+  for (const entry of parsedBody) {
     for (const encoding of entry.encodings) {
       if (iconvLite.encodingExists(encoding.name)) {
         supportedNames.push(encoding.name);
@@ -21,14 +20,16 @@ async function main() {
     }
   }
 
+  const bodyToNamesOutput = JSON.stringify(body, undefined, 2);
+  fs.writeFileSync(path.resolve(__dirname, "../test/web-platform-tests/resources/encodings.json"), bodyToNamesOutput);
+
   const labelsToNamesOutput = JSON.stringify(labelsToNames, undefined, 2);
   fs.writeFileSync(path.resolve(__dirname, "../lib/labels-to-names.json"), labelsToNamesOutput);
 
   const supportedNamesOutput = JSON.stringify(supportedNames, undefined, 2);
   fs.writeFileSync(path.resolve(__dirname, "../lib/supported-names.json"), supportedNamesOutput);
-}
-
-main().catch(e => {
-  console.error(e.stack);
-  process.exit(1);
-});
+})
+  .catch(e => {
+    console.error(e.stack);
+    process.exit(1);
+  });
