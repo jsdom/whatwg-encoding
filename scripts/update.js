@@ -3,7 +3,6 @@
 const fs = require("fs");
 const path = require("path");
 const iconvLite = require("iconv-lite");
-const fetch = require("minipass-fetch");
 
 async function main() {
   const res = await fetch("https://encoding.spec.whatwg.org/encodings.json");
