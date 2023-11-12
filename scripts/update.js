@@ -11,7 +11,7 @@ async function main() {
   const supportedNames = [];
   for (const entry of body) {
     for (const encoding of entry.encodings) {
-      if (iconvLite.encodingExists(encoding.name)) {
+      if (iconvLite.encodingExists(encoding.name) || encoding.name === "x-user-defined") {
         supportedNames.push(encoding.name);
         for (const label of encoding.labels) {
           labelsToNames[label] = encoding.name;

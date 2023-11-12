@@ -14,6 +14,7 @@
     "lib/"
   ],
   "scripts": {
+    "pretest": "npm run prepare",
     "test": "node --test",
     "lint": "eslint .",
     "prepare": "node scripts/update.js"
