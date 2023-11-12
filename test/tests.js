@@ -32,6 +32,13 @@ describe("decode", () => {
     assert.strictEqual(string, "€•");
   });
 
+  it("should pass a basic x-user-defined smoke test", () => {
+    const uint8Array = new Uint8Array([0x00, 0x77, 0x7F, 0x80, 0x81, 0xFE, 0xFF]);
+    const string = whatwgEncoding.decode(uint8Array, "x-user-defined");
+
+    assert.strictEqual(string, "\u0000\u0077\u007F\uF780\uF781\uF7FE\uF7FF");
+  });
+
   it("should throw when given an invalid encoding name", () => {
     assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "asdf"), RangeError);
     assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "utf-8"), RangeError);
@@ -44,7 +51,6 @@ describe("decode", () => {
     assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "ISO-8859-8-I"), RangeError);
     assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "replacement"), RangeError);
     assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "x-mac-cyrillic"), RangeError);
-    assert.throws(() => whatwgEncoding.decode(new Uint8Array([]), "x-user-defined"), RangeError);
   });
 
   it("should throw when given an encoding label that is not a name", () => {
@@ -106,8 +112,6 @@ describe("labelToName", () => {
 
     assert.strictEqual(whatwgEncoding.labelToName("x-mac-cyrillic"), null);
     assert.strictEqual(whatwgEncoding.labelToName("x-mac-ukrainian"), null);
-
-    assert.strictEqual(whatwgEncoding.labelToName("x-user-defined"), null);
   });
 
   it("should return null for non-strings", () => {
@@ -167,7 +171,6 @@ describe("isSupported", () => {
     assert.strictEqual(whatwgEncoding.isSupported("ISO-8859-8-I"), false);
     assert.strictEqual(whatwgEncoding.isSupported("replacement"), false);
     assert.strictEqual(whatwgEncoding.isSupported("x-mac-cyrillic"), false);
-    assert.strictEqual(whatwgEncoding.isSupported("x-user-defined"), false);
   });
 
   it("should return false for invalid encoding names", () => {
