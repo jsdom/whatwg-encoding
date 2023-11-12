@@ -66,6 +66,7 @@ describe("labelToName", () => {
     assert.strictEqual(whatwgEncoding.labelToName("csibm866"), "IBM866");
     assert.strictEqual(whatwgEncoding.labelToName("latin3"), "ISO-8859-3");
     assert.strictEqual(whatwgEncoding.labelToName("tis-620"), "windows-874");
+    assert.strictEqual(whatwgEncoding.labelToName("x-user-defined"), "x-user-defined");
   });
 
   it("should be case-insensitive", () => {
@@ -73,6 +74,7 @@ describe("labelToName", () => {
     assert.strictEqual(whatwgEncoding.labelToName("csIBM866"), "IBM866");
     assert.strictEqual(whatwgEncoding.labelToName("laTIn3"), "ISO-8859-3");
     assert.strictEqual(whatwgEncoding.labelToName("Tis-620"), "windows-874");
+    assert.strictEqual(whatwgEncoding.labelToName("x-USER-Defined"), "x-user-defined");
   });
 
   it("should trim ASCII whitespace", () => {
@@ -80,6 +82,7 @@ describe("labelToName", () => {
     assert.strictEqual(whatwgEncoding.labelToName("\u000C\u000Ccsibm866"), "IBM866");
     assert.strictEqual(whatwgEncoding.labelToName("latin3\u000D\u000D"), "ISO-8859-3");
     assert.strictEqual(whatwgEncoding.labelToName("tis-620\u0020"), "windows-874");
+    assert.strictEqual(whatwgEncoding.labelToName("\u0020x-user-defined"), "x-user-defined");
   });
 
   it("should trim ASCII whitespace and be case-insensitive", () => {
@@ -87,6 +90,7 @@ describe("labelToName", () => {
     assert.strictEqual(whatwgEncoding.labelToName("\u000C\u000CcsIBM866"), "IBM866");
     assert.strictEqual(whatwgEncoding.labelToName("laTIn3\u000D\u000D"), "ISO-8859-3");
     assert.strictEqual(whatwgEncoding.labelToName("Tis-620\u0020"), "windows-874");
+    assert.strictEqual(whatwgEncoding.labelToName("\u0020x-USER-Defined"), "x-user-defined");
   });
 
   it("should return null for invalid encoding labels", () => {
